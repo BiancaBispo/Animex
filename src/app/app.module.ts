@@ -13,13 +13,15 @@ import { AppComponent } from './app.component';
 import { AnimeCreateComponent } from './componentes/anime-create/anime-create.component';
 import { AnimeEditComponent } from './componentes/anime-edit/anime-edit.component';
 import { AnimeListComponent } from './componentes/anime-list/anime-list.component';
+import { HomeComponent } from './componentes/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeCreateComponent,
     AnimeEditComponent,
-    AnimeListComponent
+    AnimeListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
