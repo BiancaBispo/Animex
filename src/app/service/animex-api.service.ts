@@ -1,8 +1,16 @@
-import { Injectable } from '@angular/core';
+import{ Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+// Importar o model
+import{ Anime } from '../model/anime';
+
+//Importar os recursos para lidar com as requisições http
+import{  HttpClient, HttpHeaders  } from '@angular/common/http';
+import{  Observable, throwError  } from 'rxjs'; 
+import{  retry, catchError  } from 'rxjs'; 
+
+
+@Injectable()
+
 export class AnimexApiService {
 
   constructor() { }
