@@ -12,4 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  tituloComp: string = "Bem vindo a aplicação de cadastro de animes!"
+  textoComp: string = "Selecione uma ação no menu superior."
+
 }
