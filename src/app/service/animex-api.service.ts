@@ -15,3 +15,6 @@ export class AnimexApiService {
 
   constructor() { }
 }
+
+
+// Bruno
