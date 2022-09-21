@@ -1,4 +1,4 @@
-import{ Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 // Importar o model
 import{ Anime } from '../model/anime';
@@ -15,3 +15,7 @@ export class AnimexApiService {
 
   constructor() { }
 }
+
+
+
+//Bianca Bispo
