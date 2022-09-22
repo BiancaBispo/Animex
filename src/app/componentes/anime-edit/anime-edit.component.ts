@@ -1,11 +1,13 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 //Importar o service
 import { AnimexApiService } from 'src/app/service/animex-api.service';
 
 //Importar a classe Router 
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+
+// Importar a interface Anime
+import { Anime } from 'src/app/model/anime';
 
 
 @Component({
@@ -13,23 +15,19 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
   templateUrl: './anime-edit.component.html',
   styleUrls: ['./anime-edit.component.css']
 })
-
-@Injectable({
-  providedIn: 'root'
-})
 export class AnimeEditComponent implements OnInit {
 
   // Titulo ao componente
   tituloComp: string = 'Alterar Anime'
 
-  form!: FormGroup;
-  submitted = false;
+  public animeId!: string;
+  public animeDetail = <Anime>{};
+  public mode!: string;
 
   constructor(
     public animexApi: AnimexApiService,
     public roteamento: Router,
-    public rotaAtiva: ActivatedRoute,
-    private fb: FormBuilder
+    public rotaAtiva: ActivatedRoute
   ) { }
 
   // Copia da rota
@@ -44,21 +42,24 @@ export class AnimeEditComponent implements OnInit {
       this.atualizarAnime = dados
     })
 
-    this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required])
+    this.rotaAtiva.queryParams.subscribe((params: Params) => {
+      this.animeId = params['id']
+      if(this.animeId !== undefined) {
+        console.log(this.animeId)
+        this.getAnimeDetailById(this.animeId)
+        this.mode = 'Edit'
+      } else {
+        console.log(this.animeId);
+        this.animeDetail['id'] = 0
+        this.mode = 'Add'
+      }
     })
   }
-
-
-  // Verifica erros
-  hasError(field: string) {
-    return this.form.get(field)?.errors
+  // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)
+  getAnimeDetailById(id: string) {
+    this.animeDetail = this.animexApi.getAnimeById(parseInt(id))
+    console.log(this.animeDetail)
   }
-
-  // Cancelar a alteração
-  onCancel() {
-    this.roteamento.navigate(['/anime-list'])
-   }
 
   // Atualizar
   atualizacaoAnimes(){
@@ -67,6 +68,15 @@ export class AnimeEditComponent implements OnInit {
         this.roteamento.navigate(['/anime-list']) //Voltar para lista quando finalizado
       })
     }
+  }
+
+  teste(form: any) {
+    console.log(form)
+  }
+
+  // Cancelar e voltar a página anterior
+  onClickCancel() {
+    this.roteamento.navigate(['/anime-list'])
   }
 
 

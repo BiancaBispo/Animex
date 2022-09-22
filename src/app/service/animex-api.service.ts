@@ -34,9 +34,16 @@ export class AnimexApiService {
     return this.reqHttp.get<Anime>(this.apiURL+'/animes').pipe(retry(1), catchError(this.tratarErro))
   }
 
+  getAnimeById(id: number): Anime {
+    var animeArray = JSON.parse(this.apiURL+"/animes")
+    console.log(animeArray)
+    return animeArray
+    .filter((anime: {id: number}) => anime.id === id)
+    .pop()
+  }
 
-  // Acessar um registro aquiiii
-  acessarUmAnime(id:any): Observable<Anime>{
+  // Acessar um registro aqui
+  acessarUmAnime(id: number): Observable<Anime>{
     return this.reqHttp.get<Anime>(this.apiURL+'/animes/'+id).pipe(
       retry(1),
       catchError(this.tratarErro)
