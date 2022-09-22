@@ -1,41 +1,124 @@
 <div class="container custom-container">
   <div class="col-md-12">
-    <h3 class="mb-3 text-center">{{tituloComp}}</h3>
+    <h3 class="mb-3 text-center">{{ tituloComp }}</h3>
 
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)] = "atualizarAnime.name"
-        placeholder="Informe o nome do anime"
-        class="form-control"
-      />
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <form class="needs-validation" [formGroup]="form">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Informe o nome do anime"
+            required
+            minlenght="4"
+            formControlName="name"
+            [(ngModel)]="atualizarAnime.name"
+          />
+          <input
+            type="text"
+            class="form-control"
+            id="tipo"
+            placeholder="Informe o estilo do anime"
+            formControlName="tipo"
+            [ngModel]="atualizarAnime.type"
+            [ngClass]="{ 'if-invalid': hasError('tipo') }"
+          />
+          <div class="invalid-feedback" *ngIf="hasError('tipo')?.['required']">
+            O Estilo deve conter ao menos 1 caractere.
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="anos"
+            placeholder="Informe o ano do anime"
+            formControlName="anos"
+            [ngModel]="atualizarAnime.years"
+            [ngClass]="{ 'if-invalid': submitted && hasError('anos') }"
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div
+            class="invalid-feedback"
+            *ngIf="hasError('anos') && hasError('anos')?.['required']"
+          >
+            O Ano deve conter 4 caracteres.
+          </div>
+
+          <input
+            type="text"
+            class="form-control"
+            id="autor"
+            placeholder="Informe o autor do anime"
+            formControlName="autor"
+            [ngModel]="atualizarAnime.author"
+            [ngClass]="{ 'if-invalid': submitted && hasError('autor') }"
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="hasError('autor') && hasError('autor')?.['required']"
+          >
+            O Autor deve conter ao menos 1 caractere.
+          </div>
+        </form>
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            (click)="atualizacaoAnimes()"
+          >
+            Salvar
+          </button>
+          <button type="button" class="btn btun-default" (click)="onCancel()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+      <!--
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="atualizarAnime.name"
+          placeholder="Informe o nome do anime"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="atualizarAnime.type"
+          placeholder="Informe o estilo do anime"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="atualizarAnime.years"
+          placeholder="Informe o ano do anime"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="atualizarAnime.author"
+          placeholder="Informe o nome do Autor do anime"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <button
+          class="btn btn-secondary btn-large btn-block"
+          value="Salvar Edição"
+          (click)="atualizacaoAnimes()"
+        >
+          Atualizar Anime
+        </button>
+      </div>
     </div>
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)] = "atualizarAnime.type"
-        placeholder="Informe o estilo do anime"
-        class="form-control"
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)] = "atualizarAnime.years"
-        placeholder="Informe o ano do anime"
-        class="form-control"
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)] = "atualizarAnime.author"
-        placeholder="Informe o nome do Autor do anime"
-        class="form-control"
-      />
-    </div>
-    <div class="form-group" >
-      <button class="btn btn-secondary btn-large btn-block" (click) = "atualizacaoAnimes()">Salvar Edição</button>
+  </div>
+  -->
     </div>
   </div>
 </div>
