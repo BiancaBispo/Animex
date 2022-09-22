@@ -5,3 +5,17 @@ a:hover {
   text-decoration: none;
 }
 
+#logo{
+  height: 50px;
+  width: 80px;
+  border-radius: 100%;
+  opacity: .4;
+
+}
+
+
+
+.menu h4{
+  font-family: 'EB Garamond', serif;
+
+}
