@@ -24,7 +24,7 @@
             <td>{{ a.author }}</td>
             <td>
               <button class="btn btn-primary" routerLink="/anime-edit/{{a.id}}">Editar</button>
-              <button class="btn btn-danger" >Excluir</button>
+              <button class="btn btn-danger" (click) = 'excluirAnime(a.id)'>Excluir</button>
             </td>
           </tr>
         </tbody>

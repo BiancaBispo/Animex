@@ -32,5 +32,11 @@ export class AnimeListComponent implements OnInit {
   }
 
   //Colocar excluir aquiii
-  
+  excluirAnime(id: any){
+    if(confirm('Tem certeza que deseja excluir este Anime?'))
+    this.animexApi.excluirAnime(id).subscribe(() => {
+      this.exibirAnimes
+    })
+  }
+
 }
