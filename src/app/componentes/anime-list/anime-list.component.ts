@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Importar o service - que tem nossos métodos get, post, put e delete
-import { AnimexApiService } from 'src/app/service/animex-api.service';
+import { AnimexApiService } from 'src/app/service/animex-api.service'
 
 @Component({
   selector: 'app-anime-list',
@@ -13,6 +13,9 @@ export class AnimeListComponent implements OnInit {
   //Titulo
   tituloComp: string = "Listar animes cadastrados"
 
+
+
+  
   //Coleção dos dados
   listaAnimes: any = []
 
