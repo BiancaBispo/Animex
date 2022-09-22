@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-// importar o modulo HttpClient
+// importar os modulos necessários para a API
 import { HttpClientModule } from '@angular/common/http';
-
-import  { AnimexApiService } from  './service/animex-api.service';
-
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +11,9 @@ import { AnimeCreateComponent } from './componentes/anime-create/anime-create.co
 import { AnimeEditComponent } from './componentes/anime-edit/anime-edit.component';
 import { AnimeListComponent } from './componentes/anime-list/anime-list.component';
 import { HomeComponent } from './componentes/home/home.component';
+
+// Importar o service
+import  { AnimexApiService } from  './service/animex-api.service';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,8 @@ import { HomeComponent } from './componentes/home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AnimexApiService],
   bootstrap: [AppComponent]

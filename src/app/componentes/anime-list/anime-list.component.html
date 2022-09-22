@@ -1,9 +1,8 @@
 <div class="container custom-container2">
   <div class="col-md-12">
-
-    <h3 class=" mb3 text-center">{{ tituloComp }}</h3><br>
-    <div *ngIf = "listaAnimes != 0; else listaSemAnimes">
-
+    <h3 class="mb3 text-center">{{ tituloComp }}</h3>
+    <br />
+    <div *ngIf="listaAnimes != 0; else listaSemAnimes">
       <table class="table table-bordered table-hover text-center">
         <thead class="table-dark">
           <tr>
@@ -16,29 +15,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor = "let a of listaAnimes">
+          <tr *ngFor="let a of listaAnimes">
             <td>{{ a.id }}</td>
             <td>{{ a.name }}</td>
             <td>{{ a.type }}</td>
             <td>{{ a.years }}</td>
             <td>{{ a.author }}</td>
             <td>
-              <button class="btn btn-primary" routerLink="/anime-edit/{{a.id}}">Editar</button>
-              <button class="btn btn-danger" (click) = 'excluirAnime(a.id)'>Excluir</button>
+              <button
+                class="btn btn-primary"
+                routerLink="/anime-edit/{{ a.id }}"
+              >
+                Editar
+              </button>
+              <button class="btn btn-danger" (click)="excluirAnime(a.id)">
+                Excluir
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
-    
     </div>
 
     <!--'MiniView'-->
-    <ng-template #listaSemAnimes> <!--#listaSemAnimes quando não tiver dados no meu array, vem para cá e mostra essa miniView-->
+    <ng-template #listaSemAnimes>
+      <!--#listaSemAnimes quando não tiver dados no meu array, vem para cá e mostra essa miniView-->
       <div class="no-data text-center">
-        <button class="btn btn-outline-primary" routerLink = "/anime-create">Criar Anime</button>
-          <p> Cadastre seu Anime Favorito!! Clique no botão acima</p>
+        <button class="btn btn-outline-primary" routerLink="/anime-create">
+          Criar Anime
+        </button>
+        <p>Cadastre seu Anime Favorito!! Clique no botão acima</p>
       </div>
     </ng-template>
-
   </div>
 </div>

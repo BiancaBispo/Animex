@@ -1,48 +1,56 @@
 <div class="container custom-container">
   <div class="col-md-12">
     <h3 class="mb-3 text-center">{{ tituloComp }}</h3>
+    <form [formGroup]="dataForm" (ngSubmit)="inserirAnimes()">
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="dadosAnime.name"
+          placeholder="Informe o nome do anime"
+          formControlName="name"
+          class="form-control"
+        />
+      </div>
 
-    <div class="form-group ">
-      <input
-        type="text"
-        [(ngModel)] = "dadosAnime.name"
-        placeholder="Informe o nome do anime"
-        class="form-control"
-      />
-    </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="dadosAnime.type"
+          placeholder="Informe o estilo do anime"
+          formControlName="type"
+          class="form-control"
+        />
+      </div>
 
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)] = "dadosAnime.type"
-        placeholder="Informe o estilo do anime"
-        class="form-control"
-      />
-    </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="dadosAnime.years"
+          name="years"
+          placeholder="Informe o ano do anime"
+          class="form-control"
+          formControlName="years"
+        />
+      </div>
 
-    <div class="form-group">
-      <input
-        type="text"
-        [(ngModel)] = "dadosAnime.years"
-        placeholder="Informe o ano do anime"
-        class="form-control"
-      />
-    </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="dadosAnime.author"
+          placeholder="Informe o nome do Autor do anime"
+          formControlName="author"
+          class="form-control"
+        />
+      </div>
 
-    <div class="form-group ">
-      <input
-        type="text"
-        [(ngModel)] = "dadosAnime.author"
-        placeholder="Informe o nome do Autor do anime"
-        class="form-control"
-      />
-    </div>
-
-    <div class="form-group text-end">
-      <button class="btn btn-success btn-large btn-block " (click) = "inserirAnimes()" >
-        Salvar Registro
-      </button>
-    </div>
-
+      <div class="form-group text-end">
+        <input
+          class="btn btn-success btn-large btn-block"
+          type="submit"
+          [disabled]="!dataForm.valid"
+          value="Inserir Anime"
+        />
+      </div>
+    </form>
   </div>
 </div>
