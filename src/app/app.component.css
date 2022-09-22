@@ -156,13 +156,13 @@ svg#rocket-smoke {
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+ /* color: #1976d2;*/
   text-decoration: none;
 }
 
-a:hover {
+/*a:hover {
   color: #125699;
-}
+}*/
 
 .terminal {
   position: relative;
@@ -217,19 +217,8 @@ a:hover {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-}
 
-footer a {
-  display: flex;
-  align-items: center;
-}
-
-.github-star-badge {
+/*.github-star-badge {
   color: #24292e;
   display: flex;
   align-items: center;
@@ -252,7 +241,7 @@ footer a {
   height: 16px;
   width: 16px;
   margin-right: 4px;
-}
+}*/
 
 svg#clouds {
   position: fixed;

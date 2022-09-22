@@ -1,25 +1,48 @@
-<div class="d-flex flex-column flex-md-row align-items p-2 px-md-5 mb-5 bg-white border-bottom shadow-sm ">
+<nav class="navbar navbar-light bg-dark p-1 px-md-4 mb-4 border-bottom shadow-sm">
+  <div class="container-fluid ">
     
-  <nav class="navbar navbar-dark  ">
+    <!--<h3 class="navbar-brand">Animex</h3>-->
+    <h4 style="color: white">Animex</h4>
 
-      <a class="navbar-brand disabled">Animex</a>
-      <a class="btn btn-outline-primary" routerLink = "/home">Home</a>
-      <a class="btn btn-outline-primary" routerLink = "/anime-create">Incluir Anime</a>
-      <a class="btn btn-outline-primary" routerLink = "/anime-list">Listar Anime</a>
-  </nav>
-  
-</div>
+    <div class="d-flex  w-auto">
+      <button class="btn btn-outline-secondary m-2" routerLink="/home">Home</button>
+      <button class="btn btn-outline-secondary m-2" routerLink="/anime-create">Incluir Anime</button>
+      <button class="btn btn-outline-secondary m-2" routerLink="/anime-list">Listar Anime</button>
+    </div>
+  </div>
+</nav>
 
-<!--<div class="container">
-  <h4 class="text-center">Cadastro de Animes</h4>
-  <nav class="text-center">
-    <button class="btn btn-secondary btn-block" routerLink="/home">Home</button>
-    <button class="btn btn-secondary btn-block" routerLink="/anime-create">
-      Incluir Anime
-    </button>
-    <button class="btn btn-secondary btn-block" routerLink="/anime-list">
-      Listar Anime
-    </button>
-  </nav>
-</div>-->
 <router-outlet></router-outlet>
+
+<!--Footer-->
+  <footer class="bg-dark text-center text-white  fixed-bottom">
+    <div class="container p-1 ">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h6 class="text-uppercase">Projeto realizado:</h6>
+          <p>Bruno Muniz Belo</p>
+          <p>Bianca Bispo</p>
+          <p>Rafael Reinaldo Marcolino</p>
+        </div>
+
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <!-- Linkedin 
+          <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+            <i class="fa fa-linkedin"></i>
+          </a>-->
+    
+          <!-- Github -->
+          <a mdbRipple class="btn btn-outline-light btn-floating m-1" href="" role="button">
+            <i class="fa fa-github"></i>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright
+    </div>
+    <!-- Copyright -->
+  </footer>
