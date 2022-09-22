@@ -1,39 +1,48 @@
 <div class="container custom-container">
   <div class="col-md-12">
-    <h3 class="mb-3 text-center">TituloComp aqui</h3>
+    <h3 class="mb-3 text-center">{{ tituloComp }}</h3>
 
     <div class="form-group">
       <input
         type="text"
+        [(ngModel)] = "dadosAnime.name"
         placeholder="Informe o nome do anime"
         class="form-control"
       />
     </div>
+
     <div class="form-group">
       <input
         type="text"
+        [(ngModel)] = "dadosAnime.type"
         placeholder="Informe o estilo do anime"
         class="form-control"
       />
     </div>
+
     <div class="form-group">
       <input
         type="text"
+        [(ngModel)] = "dadosAnime.years"
         placeholder="Informe o ano do anime"
         class="form-control"
       />
     </div>
+
     <div class="form-group">
       <input
         type="text"
+        [(ngModel)] = "dadosAnime.author"
         placeholder="Informe o nome do Autor do anime"
         class="form-control"
       />
     </div>
+
     <div class="form-group">
-      <button class="btn btn-success btn-large btn-block">
+      <button class="btn btn-success btn-large btn-block " (click) = "inserirAnimes()" >
         Salvar Registro
       </button>
     </div>
+
   </div>
 </div>

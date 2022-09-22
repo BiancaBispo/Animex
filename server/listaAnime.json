@@ -1,0 +1,25 @@
+{
+  "animes": [
+    {
+      "id": 1,
+      "name": "Dragon Boll",
+      "type": "Luta",
+      "years": 1984,
+      "author": "Akira Toriyama"
+    },
+    {
+      "id": 2,
+      "name": "Naruto",
+      "type": "corrida infinita",
+      "years": 1997,
+      "author": "Masashi Kishimoto"
+    },
+    {
+      "name": "teste",
+      "type": "ssss",
+      "years": "1888",
+      "author": "asadasd",
+      "id": 3
+    }
+  ]
+}
