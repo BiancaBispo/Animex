@@ -5,6 +5,7 @@ import { AnimexApiService } from 'src/app/service/animex-api.service';
 
 //Importando a classe Router
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-anime-create',
@@ -15,6 +16,9 @@ export class AnimeCreateComponent implements OnInit {
 
   // Titulo
   tituloComp: string = 'Cadastrar Anime'
+
+  // Propriedades para auxiliar o controle do formulário
+  dataForm: any
   
   //Objeto literal - chave-valor
   @Input() dadosAnime = {
@@ -32,6 +36,12 @@ export class AnimeCreateComponent implements OnInit {
 
   
   ngOnInit(): void {
+    this.dataForm = new FormGroup({
+      name: new FormControl('', Validators.compose([Validators.required])),
+      type: new FormControl('', Validators.compose([Validators.required])),
+      years: new FormControl('', this.validarAno),
+      author: new FormControl('', Validators.compose([Validators.required]))
+    })
   }
 
   //Enviar dados capturados - a partir da view - para o service
@@ -39,6 +49,13 @@ export class AnimeCreateComponent implements OnInit {
     this.animexApi.inserirAnimes(this.dadosAnime).subscribe(() => {
       this.roteamento.navigate(['/anime-list'])
     })
+  }
+
+  validarAno(valorAno: any) {
+    if (valorAno.value.length != 4) {
+      return {years: true}
+    }
+    return null
   }
 
 }

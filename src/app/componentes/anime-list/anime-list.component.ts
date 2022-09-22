@@ -17,7 +17,9 @@ export class AnimeListComponent implements OnInit {
   listaAnimes: any = []
 
   //Referência de instância 
-  constructor(public animexApi: AnimexApiService) { }
+  constructor(
+    public animexApi: AnimexApiService
+    ) { }
 
   ngOnInit(): void {
     this.exibirAnimes()
@@ -35,7 +37,7 @@ export class AnimeListComponent implements OnInit {
   excluirAnime(id: any){
     if(confirm('Tem certeza que deseja excluir este Anime?'))
     this.animexApi.excluirAnime(id).subscribe(() => {
-      this.exibirAnimes
+      this.exibirAnimes()
     })
   }
 
