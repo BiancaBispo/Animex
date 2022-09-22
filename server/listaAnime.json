@@ -1,3 +1,18 @@
 {
-  "animes": []
+  "animes": [
+    {
+      "name": "",
+      "type": "",
+      "years": "",
+      "author": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "type": "Que",
+      "years": "1999",
+      "author": "Eu to",
+      "id": 2
+    }
+  ]
 }

@@ -33,7 +33,6 @@ export class AnimeListComponent implements OnInit {
     this.animexApi.lerDadosAnime().subscribe((dados:{}) => {
       this.listaAnimes = dados
     })
-
   }
 
   //Colocar excluir aquiii
