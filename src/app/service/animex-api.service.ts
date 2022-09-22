@@ -36,7 +36,12 @@ export class AnimexApiService {
 
 
   // Acessar um registro aquiiii
-
+  acessarUmAnime(id:any): Observable<Anime>{
+    return this.reqHttp.get<Anime>(this.apiURL+'/animes/'+id).pipe(
+      retry(1),
+      catchError(this.tratarErro)
+    )
+  }
 
 
   //Inserir um novo registro
@@ -46,7 +51,23 @@ export class AnimexApiService {
       catchError(this.tratarErro)
     )
   }
+
+  //Alterar um registro
+  alterarAnime(id:any, novosDados:any): Observable<Anime>{
+    return this.reqHttp.put<Anime>(this.apiURL+'/animes/'+id, JSON.stringify(novosDados), this.autorizacaoAcesso).pipe(
+      retry(1),
+      catchError(this.tratarErro)
+    )
+  }
   
+
+  //Excluir um registro
+  excluirAnime(id:any){
+    return this.reqHttp.delete<Anime>(this.apiURL+'/animes/'+id, this.autorizacaoAcesso).pipe(
+      retry(1),
+      catchError(this.tratarErro)
+    )
+  }
 
   /* Tratando o erro: */
   tratarErro(erro:any){
