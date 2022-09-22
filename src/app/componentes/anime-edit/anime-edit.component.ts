@@ -8,6 +8,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 
 // Importar a interface Anime
 import { Anime } from 'src/app/model/anime';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -45,11 +46,9 @@ export class AnimeEditComponent implements OnInit {
     this.rotaAtiva.queryParams.subscribe((params: Params) => {
       this.animeId = params['id']
       if(this.animeId !== undefined) {
-        console.log(this.animeId)
         this.getAnimeDetailById(this.animeId)
         this.mode = 'Edit'
       } else {
-        console.log(this.animeId);
         this.animeDetail['id'] = 0
         this.mode = 'Add'
       }
@@ -62,16 +61,12 @@ export class AnimeEditComponent implements OnInit {
   }
 
   // Atualizar
-  atualizacaoAnimes(){
-    if(confirm('Tem certeza que deseja alterar esse Anime?')){
+  atualizacaoAnimes(form: any){
+    if(form.valid){
       this.animexApi.alterarAnime(this.copiaRota, this.atualizarAnime).subscribe(() => {
         this.roteamento.navigate(['/anime-list']) //Voltar para lista quando finalizado
       })
     }
-  }
-
-  teste(form: any) {
-    console.log(form)
   }
 
   // Cancelar e voltar a página anterior

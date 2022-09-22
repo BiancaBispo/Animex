@@ -4,7 +4,7 @@
     <form
       id="animeForm"
       #animeForm="ngForm"
-      (ngSubmit)="atualizacaoAnimes()"
+      (ngSubmit)="atualizacaoAnimes(animeForm)"
       novalidate
     >
       <div class="form-group row">
@@ -72,7 +72,7 @@
           <button
             type="button"
             class="btn btn-secondary btn-large btn-block"
-            (click)="onClickCancel()"
+            (click)="atualizacaoAnimes(animeForm)"
           >
             Cancelar
           </button>
