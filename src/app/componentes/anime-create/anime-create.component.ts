@@ -19,7 +19,7 @@ export class AnimeCreateComponent implements OnInit {
   tituloComp: string = 'Cadastrar Anime'
 
   // Propriedades para auxiliar o controle do formulário
-  dataForm: any
+  dataForm: any = {}
   
   //Objeto literal - chave-valor
   @Input() dadosAnime = {
@@ -36,45 +36,20 @@ export class AnimeCreateComponent implements OnInit {
   //Referência da instância
   constructor(
     public animexApi: AnimexApiService,
-    public roteamento: Router,
-    public rotaAtiva: ActivatedRoute
-
+    public roteamento: Router
     ) { }
-
-  // Copia da rota
-  copiaRota = this.rotaAtiva.snapshot.params['id']
-
   
   ngOnInit(): void {
-    this.dataForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      type: new FormControl('', Validators.required),
-      years: new FormControl('', this.validarAno),
-      author: new FormControl('', Validators.required)
-    })
-
   }
-
-    // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)
-    getAnimeDetailById(id: string) {
-      this.animeDetail = this.animexApi.getAnimeById(parseInt(id))
-      console.log(this.animeDetail)
-    }
 
   //Enviar dados capturados - a partir da view - para o service
   inserirAnimes(form: any){
     if(form.valid){
+      console.log(this.dadosAnime)
       this.animexApi.inserirAnimes(this.dadosAnime).subscribe(() => {
         this.roteamento.navigate(['/anime-list'])
       })
     }
-  }
-
-  validarAno(valorAno: any) {
-    if (valorAno.value.length != 4) {
-      return {years: true}
-    }
-    return null
   }
 
     // Cancelar e voltar a página anterior

@@ -1,11 +1,7 @@
-<br />
 <div class="container custom-container">
   <div class="col-md-12">
     <h3 class="mb-3 text-center">{{ tituloComp }}</h3>
-
-    <!--https://getbootstrap.com/docs/5.0/forms/validation/-->
     <form
-      [formGroup]="dataForm"
       class="was-validated"
       id="animeForm"
       #animeForm="ngForm"
@@ -14,65 +10,71 @@
       <div class="form-group row">
         <input
           type="text"
+          #name="ngModel"
+          name="name"
           [(ngModel)]="dadosAnime.name"
           placeholder="Informe o nome do anime"
           class="form-control"
-          formControlName="name"
           required
         />
+        <div [hidden]="name.valid" class="text-danger">
+          Nome do Anime é necessário.
+        </div>
       </div>
       <div class="form-group row">
         <input
           type="text"
+          #type="ngModel"
+          name="type"
           [(ngModel)]="dadosAnime.type"
           placeholder="Informe o estilo do anime"
           class="form-control"
-          formControlName="type"
           required
         />
-
-        <!--Validação-->
       </div>
-
+      <div [hidden]="type.valid" class="text-danger">
+        Estilo do Anime é necessário.
+      </div>
       <div class="form-group row">
         <input
           type="text"
+          #years="ngModel"
+          name="years"
           [(ngModel)]="dadosAnime.years"
           placeholder="Informe o ano do anime"
           class="form-control"
-          formControlName="years"
           minlength="4"
           maxlength="4"
           required
         />
-
-        <!--Validação-->
+        <div [hidden]="years.valid" class="text-danger">
+          Obrigatório o ano do anime ter 4 digitos.
+        </div>
       </div>
-
       <div class="form-group row">
         <input
           type="text"
+          #author="ngModel"
+          name="author"
           [(ngModel)]="dadosAnime.author"
           placeholder="Informe o nome do Autor do anime"
           class="form-control"
-          formControlName="author"
           required
         />
-        <!--Validação-->
+        <div [hidden]="author.valid" class="text-danger">
+          Autor do Anime é necessário.
+        </div>
       </div>
 
       <!--Botão-->
       <div class="form-group text-end">
-        <!--<button type="submit" class="btn btn-secondary btn-large btn-block">
-      Teste [disabled]="!dataForm.valid"
-          Salvar registro
-        </button>-->
-        <input
-          class="btn btn-success btn-large btn-block"
+        <button
           type="submit"
-          [disabled]="!dataForm.valid"
-          value="Inserir Anime"
-        />
+          class="btn btn-success btn-large btn-block"
+          [disabled]="!animeForm.valid"
+        >
+          Inserir Anime
+        </button>
 
         <button
           class="btn btn-secondary btn-large btn-block"
@@ -80,7 +82,6 @@
         >
           Cancelar
         </button>
-        <!--inserirDados() é o método criado no employee-create.component.ts-->
       </div>
     </form>
   </div>

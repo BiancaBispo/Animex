@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   tituloComp: string = "Bem vindo a aplicação de cadastro de animes!"
-  textoComp: string = "Selecione uma ação no menu superior."
+  textoComp: string = "Cadastre seus animes favoritos."
   nomeProjeto: string = 'Animex'
 
 

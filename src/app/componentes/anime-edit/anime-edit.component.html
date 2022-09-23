@@ -21,7 +21,6 @@
           Nome do Anime é necessário.
         </div>
       </div>
-
       <div class="form-group row">
         <input
           type="text"
@@ -49,7 +48,7 @@
           required
         />
         <div [hidden]="years.valid" class="text-danger">
-          Obrigatório o nome do anime ter 4 digitos.
+          Obrigatório o ano do anime ter 4 digitos.
         </div>
       </div>
       <div class="form-group row">
@@ -79,7 +78,7 @@
           <button
             type="button"
             class="btn btn-secondary btn-large btn-block"
-            (click)="atualizacaoAnimes(animeForm)"
+            (click)="onClickCancel()"
           >
             Cancelar
           </button>

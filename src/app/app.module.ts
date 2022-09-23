@@ -14,6 +14,7 @@ import { HomeComponent } from './componentes/home/home.component';
 
 // Importar o service
 import  { AnimexApiService } from  './service/animex-api.service';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import  { AnimexApiService } from  './service/animex-api.service';
     AnimeCreateComponent,
     AnimeEditComponent,
     AnimeListComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
