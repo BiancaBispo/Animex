@@ -5,10 +5,12 @@ a:hover {
 }
 
 #logo{
-  height: 50px;
-  width: 80px;
+  /*height: 50px;
+  width: 80px;*/
+  width: 40px;
   border-radius: 100%;
-  opacity: .4;
+  opacity: .8;
+  /*opacity: .4;*/
 
 }
 

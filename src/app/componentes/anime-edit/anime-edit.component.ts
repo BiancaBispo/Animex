@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimexApiService } from 'src/app/service/animex-api.service';
 
 //Importar a classe Router 
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 // Importar a interface Anime
 import { Anime } from 'src/app/model/anime';

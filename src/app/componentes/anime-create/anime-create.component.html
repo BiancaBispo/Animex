@@ -1,55 +1,87 @@
+<br />
 <div class="container custom-container">
   <div class="col-md-12">
     <h3 class="mb-3 text-center">{{ tituloComp }}</h3>
-    <form [formGroup]="dataForm" (ngSubmit)="inserirAnimes()">
-      <div class="form-group">
+
+    <!--https://getbootstrap.com/docs/5.0/forms/validation/-->
+    <form
+      [formGroup]="dataForm"
+      class="was-validated"
+      id="animeForm"
+      #animeForm="ngForm"
+      (ngSubmit)="inserirAnimes(animeForm)"
+    >
+      <div class="form-group row">
         <input
           type="text"
           [(ngModel)]="dadosAnime.name"
           placeholder="Informe o nome do anime"
-          formControlName="name"
           class="form-control"
+          formControlName="name"
+          required
         />
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <input
           type="text"
           [(ngModel)]="dadosAnime.type"
           placeholder="Informe o estilo do anime"
-          formControlName="type"
           class="form-control"
+          formControlName="type"
+          required
         />
+
+        <!--Validação-->
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <input
           type="text"
           [(ngModel)]="dadosAnime.years"
-          name="years"
           placeholder="Informe o ano do anime"
           class="form-control"
           formControlName="years"
+          minlength="4"
+          maxlength="4"
+          required
         />
+
+        <!--Validação-->
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <input
           type="text"
           [(ngModel)]="dadosAnime.author"
           placeholder="Informe o nome do Autor do anime"
-          formControlName="author"
           class="form-control"
+          formControlName="author"
+          required
         />
+        <!--Validação-->
       </div>
 
+      <!--Botão-->
       <div class="form-group text-end">
+        <!--<button type="submit" class="btn btn-secondary btn-large btn-block">
+      Teste [disabled]="!dataForm.valid"
+          Salvar registro
+        </button>-->
         <input
           class="btn btn-success btn-large btn-block"
           type="submit"
           [disabled]="!dataForm.valid"
           value="Inserir Anime"
         />
+
+        <button
+          class="btn btn-secondary btn-large btn-block"
+          (click)="onClickCancel()"
+        >
+          Cancelar
+        </button>
+        <!--inserirDados() é o método criado no employee-create.component.ts-->
       </div>
     </form>
   </div>

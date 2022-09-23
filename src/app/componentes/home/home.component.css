@@ -7,6 +7,7 @@
     text-align: center;
   }
 
+  
   /*Imagem Home*/
   .carousel-item{
     height: 800px;
@@ -30,19 +31,4 @@
     color: #fff;
     background-position: auto;
   }
-  .btn-color{
-    background: #000;
-    color: rgb(190, 190, 190);
-  }
-  .btn-color:hover{
-    color:#fff;
-  }
-  
-  .btn-color-news{
-    background: rgb(133, 133, 133);
-    color: rgb(53, 53, 53);
-  }
-  .btn-color-news:hover{
-    color:#fff;
-  }
-  
+ 
