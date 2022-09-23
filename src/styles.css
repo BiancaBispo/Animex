@@ -8,5 +8,19 @@
     padding-top: 10px;
 }
 
+ 
+.navbar{
+
+    border-bottom: 1px solid rgb(190, 173, 173);
+  }
 
 
+footer{
+
+    border-top: 1px solid rgb(158, 151, 151);
+
+}
+
+button{
+    margin: 4px;
+}

@@ -47,10 +47,10 @@ export class AnimeCreateComponent implements OnInit {
   
   ngOnInit(): void {
     this.dataForm = new FormGroup({
-      name: new FormControl('', Validators.compose([Validators.required])),
-      type: new FormControl('', Validators.compose([Validators.required])),
+      name: new FormControl('', Validators.required),
+      type: new FormControl('', Validators.required),
       years: new FormControl('', this.validarAno),
-      author: new FormControl('', Validators.compose([Validators.required]))
+      author: new FormControl('', Validators.required)
     })
 
   }

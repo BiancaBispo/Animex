@@ -11,11 +11,8 @@ import { AnimexApiService } from 'src/app/service/animex-api.service'
 export class AnimeListComponent implements OnInit {
 
   //Titulo
-  tituloComp: string = "Listar animes cadastrados"
+  tituloComp: string = "Lista de Animes Cadastrados"
 
-
-
-  
   //Coleção dos dados
   listaAnimes: any = []
 
@@ -35,7 +32,7 @@ export class AnimeListComponent implements OnInit {
     })
   }
 
-  //Colocar excluir aquiii
+  //Colocar excluir aqui
   excluirAnime(id: any){
     if(confirm('Tem certeza que deseja excluir este Anime?'))
     this.animexApi.excluirAnime(id).subscribe(() => {
