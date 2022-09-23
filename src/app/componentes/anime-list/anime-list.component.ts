@@ -22,6 +22,7 @@ export class AnimeListComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    // Chamada do método exibirAnimes()
     this.exibirAnimes()
   }
 
@@ -32,7 +33,7 @@ export class AnimeListComponent implements OnInit {
     })
   }
 
-  //Colocar excluir aqui
+  // Método de exclusão a partir da id
   excluirAnime(id: any){
     if(confirm('Tem certeza que deseja excluir este Anime?'))
     this.animexApi.excluirAnime(id).subscribe(() => {

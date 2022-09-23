@@ -8,7 +8,6 @@ import { ActivatedRoute, Router} from '@angular/router';
 
 // Importar a interface Anime
 import { Anime } from 'src/app/model/anime';
-import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -21,9 +20,9 @@ export class AnimeEditComponent implements OnInit {
   // Titulo ao componente
   tituloComp: string = 'Alterar Anime'
 
+  // Auxiliares
   public animeId!: string;
   public animeDetail = <Anime>{};
-  public mode!: string;
 
   constructor(
     public animexApi: AnimexApiService,
@@ -46,7 +45,6 @@ export class AnimeEditComponent implements OnInit {
   // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)
   getAnimeDetailById(id: string) {
     this.animeDetail = this.animexApi.getAnimeById(parseInt(id))
-    console.log(this.animeDetail)
   }
 
   // Atualizar
