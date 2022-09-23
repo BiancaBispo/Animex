@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AnimexApiService } from 'src/app/service/animex-api.service';
+//import { AnimexApiService } from 'src/app/service/animex-api.service';
 
 @Component({
   selector: 'app-home',
@@ -11,24 +11,24 @@ export class HomeComponent implements OnInit {
 
   
   //Coleção dos dados
-  listaAnimes: any = []
+  //listaAnimes: any = []
 
   constructor(
-    public animexApi: AnimexApiService
+    //public animexApi: AnimexApiService
 
   ) { }
 
   ngOnInit(): void {
     
-    this.exibirAnimes()
+   // this.exibirAnimes()
   }
 
   tituloComp: string = "Bem vindo a aplicação de cadastro de animes!"
   textoComp: string = "Selecione uma ação no menu superior."
+  nomeProjeto: string = 'Animex'
 
-  titulo2: string = 'oi' 
 
-  exibirAnimes(){
+/*  exibirAnimes(){
     this.animexApi.lerDadosAnime().subscribe((dados:{}) => {
       this.listaAnimes = dados
     })
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
       this.exibirAnimes()
     })
   }
+*/
 
   }
 
