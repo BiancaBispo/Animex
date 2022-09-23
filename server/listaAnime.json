@@ -57,32 +57,11 @@
       "id": 8
     },
     {
-      "name": "asdas",
-      "type": "asd",
-      "years": "1234",
-      "author": "asdasd",
+      "name": "Teste",
+      "type": "Teste",
+      "years": "1999",
+      "author": "Teste",
       "id": 9
-    },
-    {
-      "name": "asdas",
-      "type": "asd",
-      "years": "1234",
-      "author": "asdasd",
-      "id": 10
-    },
-    {
-      "name": "Porradaria",
-      "type": "Socos e Pontapés",
-      "years": "2022",
-      "author": "Bruno, Bianca e Rafael",
-      "id": 11
-    },
-    {
-      "name": "AlgumaCoisa",
-      "type": "Triste",
-      "years": "2022",
-      "author": "Ninguém",
-      "id": 12
     }
   ]
 }
