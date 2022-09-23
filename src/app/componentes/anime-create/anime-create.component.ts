@@ -47,22 +47,12 @@ export class AnimeCreateComponent implements OnInit {
   
   ngOnInit(): void {
     this.dataForm = new FormGroup({
-      name: new FormControl('', Validators.compose([Validators.required])),
-      type: new FormControl('', Validators.compose([Validators.required])),
+      name: new FormControl('', Validators.required),
+      type: new FormControl('', Validators.required),
       years: new FormControl('', this.validarAno),
-      author: new FormControl('', Validators.compose([Validators.required]))
+      author: new FormControl('', Validators.required)
     })
-    
-    /*this.rotaAtiva.queryParams.subscribe((params: Params) => {
-      this.animeId = params['id']
-      if(this.animeId !== undefined) {
-        this.getAnimeDetailById(this.animeId)
-        this.mode = 'Create'
-      } else {
-        this.animeDetail['id'] = 0
-        this.mode = 'Add'
-      }
-    })*/
+
   }
 
     // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)

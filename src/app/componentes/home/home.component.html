@@ -1,41 +1,14 @@
 <!--Imagem Home-->
-  <div class="item image ">
-      <div class="container ">
-          <div class="carousel-caption d-sm-block text-right mb-5">
-              <h1 class="display-2 title-color ">{{ nomeProjeto }}</h1>
-              <p class="lead"> {{ tituloComp }}</p> <br><br>
-              <a routerLink = "/anime-create" class="btn btn-dark btn-lg mb-5">Descubra</a>
-          </div>
-      </div>
+<div class="carousel-item carousel-image"></div>
+<section id="inicio">
+  <div class="container">
+    <div class="carousel-caption d-sm-block text-right mb-4">
+      <h1 class="display-3 title-color">{{ nomeProjeto }}</h1>
+      <p class="lead">{{ tituloComp }}</p>
+      <br /><br />
+      <a routerLink="/anime-create" class="btn btn-dark btn-lg mb-5"
+        >Descubra</a
+      >
+    </div>
   </div>
-
-
-<!--Cards
-<div class="container-fluid">
-  <div class="row">
-    <div class=" col-md-3 offset " *ngFor="let a of listaAnimes" id="mini-banners">    
-      <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="../../../assets/img/card.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h2 class="card-title">{{a.name}}</h2>
-            <p class="card-text">{{a.type}}</p>
-            <p class="card-text">{{a.years}}</p>
-            <p class="card-text">{{a.author}}</p>
-
-            <a id="button" routerLink = "/anime-create" class="btn btn-primary">Cadastrar</a>
-          </div>
-        </div>
-    </div>        
-  </div>       
-</div>
--->
-
-
-
-
-  
-  
-        
-
-
-
+</section>

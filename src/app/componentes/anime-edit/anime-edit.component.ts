@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimexApiService } from 'src/app/service/animex-api.service';
 
 //Importar a classe Router 
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 // Importar a interface Anime
 import { Anime } from 'src/app/model/anime';
@@ -41,17 +41,6 @@ export class AnimeEditComponent implements OnInit {
   ngOnInit(): void {
     this.animexApi.acessarUmAnime(this.copiaRota).subscribe((dados:any) => {
       this.atualizarAnime = dados
-    })
-
-    this.rotaAtiva.queryParams.subscribe((params: Params) => {
-      this.animeId = params['id']
-      if(this.animeId !== undefined) {
-        this.getAnimeDetailById(this.animeId)
-        this.mode = 'Edit'
-      } else {
-        this.animeDetail['id'] = 0
-        this.mode = 'Add'
-      }
     })
   }
   // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)

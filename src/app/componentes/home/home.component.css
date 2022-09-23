@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 #mini-banners{
     border: 0px solid;
     margin-bottom: 4em;
@@ -37,6 +39,7 @@
     padding: 0.6, 1.2em;
   }
   
+>>>>>>> c766f3da96fed990776e4075b3f9ea4da54f3aff
   #button{
     width: 100%;
     padding: 5px;
@@ -48,18 +51,23 @@
 
   
   /*Imagem Home*/
-  .item{
-    height: 600px;
+  .carousel-item{
+    height: 800px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
   }
-  
-  .image{
-    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)),
-    url('../../../assets/img/1.jpg');
-    background-size: cover;
+
+  .carousel-image{
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4));
+    background: url('../../../assets/img/1.jpg') fixed;
   }
+
+  .carousel-caption {
+    position: absolute;
+    bottom: 25rem;
+  }
+
+
   
   .title-color{
     color: #fff;

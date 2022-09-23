@@ -89,8 +89,3 @@ export class AnimexApiService {
     return throwError(() => mensagemErro)
   }
 }
-
-
-
-//Bianca Bispo
-// Bruno

@@ -1,15 +1,15 @@
-<br><div class="container custom-container">
+<br />
+<div class="container custom-container">
   <div class="col-md-12">
     <h3 class="mb-3 text-center">{{ tituloComp }}</h3>
 
     <!--https://getbootstrap.com/docs/5.0/forms/validation/-->
     <form
       [formGroup]="dataForm"
-      class="was-validated"  
+      class="was-validated"
       id="animeForm"
       #animeForm="ngForm"
       (ngSubmit)="inserirAnimes(animeForm)"
-      novalidate
     >
       <div class="form-group row">
         <input
@@ -21,9 +21,7 @@
           required
         />
       </div>
-
       <div class="form-group row">
-
         <input
           type="text"
           [(ngModel)]="dadosAnime.type"
@@ -34,27 +32,24 @@
         />
 
         <!--Validação-->
-
-
       </div>
 
       <div class="form-group row">
-
         <input
           type="text"
           [(ngModel)]="dadosAnime.years"
           placeholder="Informe o ano do anime"
           class="form-control"
           formControlName="years"
+          minlength="4"
+          maxlength="4"
           required
         />
 
         <!--Validação-->
-        
       </div>
 
       <div class="form-group row">
-
         <input
           type="text"
           [(ngModel)]="dadosAnime.author"
@@ -64,7 +59,6 @@
           required
         />
         <!--Validação-->
-        
       </div>
 
       <!--Botão-->
@@ -74,18 +68,19 @@
           Salvar registro
         </button>-->
         <input
-        class="btn btn-success btn-large btn-block"
-        type="submit"
-        [disabled]="!dataForm.valid"
-        value="Inserir Anime"
-      />
-        
-        <button 
-          class="btn btn-secondary btn-large btn-block" 
-          (click) = "onClickCancel()">
-          Cancelar
-        </button> <!--inserirDados() é o método criado no employee-create.component.ts-->
+          class="btn btn-success btn-large btn-block"
+          type="submit"
+          [disabled]="!dataForm.valid"
+          value="Inserir Anime"
+        />
 
+        <button
+          class="btn btn-secondary btn-large btn-block"
+          (click)="onClickCancel()"
+        >
+          Cancelar
+        </button>
+        <!--inserirDados() é o método criado no employee-create.component.ts-->
       </div>
     </form>
   </div>
