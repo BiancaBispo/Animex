@@ -1,3 +1,11 @@
 {
-  "animes": []
+  "animes": [
+    {
+      "name": "aaaaaaa",
+      "type": "aaaaaaa",
+      "years": "2000",
+      "author": "aaaaaaa",
+      "id": 1
+    }
+  ]
 }
