@@ -4,9 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AnimexApiService } from 'src/app/service/animex-api.service';
 
 //Importando a classe Router
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Anime } from 'src/app/model/anime';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-anime-create',
@@ -28,10 +26,6 @@ export class AnimeCreateComponent implements OnInit {
     years: '',
     author: '',
   }
-
-  public animeId!: string;
-  public animeDetail = <Anime>{};
-  public mode!: string;
 
   //Referência da instância
   constructor(
