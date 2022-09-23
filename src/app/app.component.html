@@ -2,15 +2,13 @@
   <div class="container-fluid">
     <!--<h3 class="navbar-brand">Animex</h3>-->
 
-    <nav class="menu">
-      <img
-        class="card-img-top logo"
-        id="logo"
-        src="../../../assets/img/logo.png"
-        alt="Imagem de capa do card"
-      />
-      <h4 style="color: white">Animex</h4>
-    </nav>
+    <img
+      class="card-img-top logo"
+      id="logo"
+      src="../../../assets/img/logo.png"
+      alt="Imagem de capa do card"
+    />
+
     <!--<h4 style="color: white">Animex</h4>-->
 
     <div class="d-flex w-auto">
@@ -30,67 +28,54 @@
 <router-outlet></router-outlet>
 
 <!--Footer-->
-<footer class="bg-dark text-center text-white fixed-bottom">
-  <div class="container p-1">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 mb-2 mb-md-0">
-        <h5 class="text-uppercase">Animex</h5>
-        <!-- Github -->
+<footer class="bg-dark text-white fixed-bottom">
+  <div class="row text-center">
+    <a
+      mdbRipple
+      class="btn btn-outline-light btn-floating m-1"
+      href="https://github.com/rafaelmarcolino22/Animex"
+      role="button"
+      >Link do Projeto</a
+    >
+    <p class="text-center">Projeto desenvolvido por</p>
+    <div class="col-sm">
+      <p>
+        Bruno Muniz Belo
         <a
-          mdbRipple
           class="btn btn-outline-light btn-floating m-1"
-          href="https://github.com/rafaelmarcolino22/Animex"
-          role="button"
+          href="https://github.com/bmbelo87"
         >
-          <footer class="bg-dark text-white fixed-bottom">
-            <div class="row text-center">
-              <!--<p class="text-uppercase">Animex</p>-->
-              <div class="col-sm">
-                <p>
-                  Bruno Muniz Belo
-                  <a
-                    class="btn btn-outline-light btn-floating m-1"
-                    href="https://github.com/bmbelo87/Animex"
-                  >
-                    <i class="fa fa-github"></i>
-                  </a>
-                </p>
-              </div>
-
-              <div class="col-sm">
-                <p>
-                  Bianca Bispo
-                  <a
-                    class="btn btn-outline-light btn-floating m-1"
-                    href="https://github.com/BiancaBispo/Animex"
-                  >
-                    <i class="fa fa-github"></i>
-                  </a>
-                </p>
-              </div>
-
-              <div class="col-sm">
-                <p>
-                  Rafael Reinaldo Marcolino
-                  <a
-                    class="btn btn-outline-light btn-floating m-1"
-                    href="https://github.com/rafaelmarcolino22/Animex"
-                  >
-                    <i class="fa fa-github"></i>
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="text-center p-3"
-              style="background-color: rgba(0, 0, 0, 0.2)"
-            >
-              © 2022 Copyright
-            </div>
-          </footer>
+          <i class="fa fa-github"></i>
         </a>
-      </div>
+      </p>
     </div>
+
+    <div class="col-sm">
+      <p>
+        Bianca Bispo
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="https://github.com/BiancaBispo"
+        >
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+    </div>
+
+    <div class="col-sm">
+      <p>
+        Rafael Reinaldo Marcolino
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="https://github.com/rafaelmarcolino22"
+        >
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2022 Copyright
   </div>
 </footer>
