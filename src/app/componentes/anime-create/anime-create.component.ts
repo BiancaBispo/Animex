@@ -46,7 +46,14 @@ export class AnimeCreateComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.rotaAtiva.queryParams.subscribe((params: Params) => {
+    this.dataForm = new FormGroup({
+      name: new FormControl('', Validators.compose([Validators.required])),
+      type: new FormControl('', Validators.compose([Validators.required])),
+      years: new FormControl('', this.validarAno),
+      author: new FormControl('', Validators.compose([Validators.required]))
+    })
+    
+    /*this.rotaAtiva.queryParams.subscribe((params: Params) => {
       this.animeId = params['id']
       if(this.animeId !== undefined) {
         this.getAnimeDetailById(this.animeId)
@@ -55,7 +62,7 @@ export class AnimeCreateComponent implements OnInit {
         this.animeDetail['id'] = 0
         this.mode = 'Add'
       }
-    })
+    })*/
   }
 
     // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)
