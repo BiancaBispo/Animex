@@ -1,3 +1,11 @@
 {
-  "animes": []
+  "animes": [
+    {
+      "name": "Dragon Ball",
+      "type": "Luta",
+      "years": "1989",
+      "author": "Akira Toriyama",
+      "id": 1
+    }
+  ]
 }

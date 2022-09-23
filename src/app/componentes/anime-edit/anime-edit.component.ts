@@ -42,17 +42,6 @@ export class AnimeEditComponent implements OnInit {
     this.animexApi.acessarUmAnime(this.copiaRota).subscribe((dados:any) => {
       this.atualizarAnime = dados
     })
-
-    this.rotaAtiva.queryParams.subscribe((params: Params) => {
-      this.animeId = params['id']
-      if(this.animeId !== undefined) {
-        this.getAnimeDetailById(this.animeId)
-        this.mode = 'Edit'
-      } else {
-        this.animeDetail['id'] = 0
-        this.mode = 'Add'
-      }
-    })
   }
   // GET dos detalhes do anime (Nome, Tipo, Ano e Autor)
   getAnimeDetailById(id: string) {

@@ -3,40 +3,32 @@
   <p>{{ textoComp }}</p>
 </div>
 
-
 <div class="container-fluid">
-    <div class="row">
-    <div class=" col-md-3 offset-md-1 " *ngFor="let a of listaAnimes" id="mini-banners">
-    
-                
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../../assets/img/naruto2.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                <h2 class="card-title">{{a.name}}</h2>
+  <div class="row">
+    <div
+      class="col-md-3 offset-md-1"
+      *ngFor="let a of listaAnimes"
+      id="mini-banners"
+    >
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="../../../assets/img/naruto2.jpg"
+          alt="Imagem de capa do card"
+        />
+        <div class="card-body">
+          <h2 class="card-title">{{ a.name }}</h2>
 
+          <p class="card-text">{{ a.type }}</p>
 
-                <p class="card-text">{{a.type}}</p>
-                
-                <p class="card-text">{{a.years}}</p>
-                <p>class="card-text">{{a.author}}</p>
-                
-                <a id="button" routerLink = "/anime-create" class="btn btn-primary">Cadastrar</a>
-            </div>
+          <p class="card-text">{{ a.years }}</p>
+          <p class="card-text">{{ a.author }}</p>
 
-            </div>
+          <a id="button" routerLink="/anime-create" class="btn btn-primary"
+            >Cadastrar</a
+          >
+        </div>
+      </div>
     </div>
-            
-          
-   </div>       
-        
+  </div>
 </div>
-
-
-
-
-  
-  
-        
-
-
-
